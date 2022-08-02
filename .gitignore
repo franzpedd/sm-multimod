@@ -1,0 +1,14 @@
+# Older versions
+old/
+
+# Scripting
+scripting/.vscode/
+scripting/compiled/
+scripting/compile.dat
+scripting/compile.exe
+scripting/spcomp.exe
+scripting/spcomp64.exe
+
+# Includes
+scripting/include/*
+!scripting/include/multimod.inc
