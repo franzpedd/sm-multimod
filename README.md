@@ -16,7 +16,8 @@ There's two examples on this repository, you can just follow along or:
 * Done, now that map will only load the plugins listed for that map + plugins not listed inside "configs/multimods/plugins.cfg".
 
 ## Lifetime of the plugin
-On map start it'll unload all plugins loaded inside "configs/multimods/plugins.cfg"
+On map start it'll unload all plugins loaded inside "configs/multimods/plugins.cfg".
+
 It'll then load the plugins listed inside the currentmap plugin list, if available.
 
 ## TODO:
