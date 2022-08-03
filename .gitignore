@@ -11,4 +11,4 @@ scripting/spcomp64.exe
 
 # Includes
 scripting/include/*
-!scripting/include/multimod.inc
+!scripting/include/multimods.inc
