@@ -21,3 +21,4 @@ It'll then load the plugins listed inside the currentmap plugin list, if availab
 
 ## TODO:
 Fuse "configs/multimods/plugins.cfg" and "configs/multimods/multimods.ini" as one KeyValue file, using "Multimod Maps" and "Multimod Plugins" as the roots.
+Make the needed files automatically with an example if file doesn't exists
