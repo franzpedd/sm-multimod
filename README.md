@@ -20,5 +20,6 @@ On map start it'll unload all plugins loaded inside "configs/multimods/plugins.c
 It'll then load the plugins listed inside the currentmap plugin list, if available.
 
 ## TODO:
-Fuse "configs/multimods/plugins.cfg" and "configs/multimods/multimods.ini" as one KeyValue file, using "Multimod Maps" and "Multimod Plugins" as the roots.
+Fuse "configs/multimods/plugins.cfg" and "configs/multimods/multimods.ini" as one KeyValue file.
+
 Make the needed files automatically with an example if file doesn't exists
