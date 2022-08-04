@@ -9,7 +9,7 @@
 
 public Plugin myinfo =
 {
-	name = "Jailbreak Testing Plugin",
+	name = "Mod 2",
 	author = "franzpedd",
 	description = "helps in testing the multimod plugins",
 	version = "0.0.1",
@@ -18,10 +18,10 @@ public Plugin myinfo =
 
 public void OnPluginStart()
 {
-    RegConsoleCmd("jailbreak", CmdJailbreak);
+    RegConsoleCmd("mod2", CmdMod2);
 }
 
-public Action CmdJailbreak(int client, int argc)
+public Action CmdMod2(int client, int argc)
 {
 	PrintToChat(client, "It's enabled");
 

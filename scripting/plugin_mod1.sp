@@ -9,7 +9,7 @@
 
 public Plugin myinfo =
 {
-	name = "Demolition Testing Plugin",
+	name = "Mod 1",
 	author = "franzpedd",
 	description = "helps in testing the multimod plugins",
 	version = "0.0.1",
@@ -18,10 +18,10 @@ public Plugin myinfo =
 
 public void OnPluginStart()
 {
-    RegConsoleCmd("demolition", CmdDemolition);
+    RegConsoleCmd("mod1", CmdMod1);
 }
 
-public Action CmdDemolition(int client, int argc)
+public Action CmdMod1(int client, int argc)
 {
 	PrintToChat(client, "It's enabled");
 
