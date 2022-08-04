@@ -9,7 +9,7 @@
 
 public Plugin myinfo =
 {
-	name = "Mod 1",
+	name = "de_ example",
 	author = "franzpedd",
 	description = "helps in testing the multimod plugins",
 	version = "0.0.1",
@@ -18,10 +18,10 @@ public Plugin myinfo =
 
 public void OnPluginStart()
 {
-    RegConsoleCmd("mod1", CmdMod1);
+    RegConsoleCmd("de", Cmd_de);
 }
 
-public Action CmdMod1(int client, int argc)
+public Action Cmd_de(int client, int argc)
 {
 	PrintToChat(client, "It's enabled");
 
