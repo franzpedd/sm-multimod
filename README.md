@@ -2,51 +2,36 @@
 
 ## What is it?
 This plugin allows a server to handle different plugins and configs per map.
+   * It unloads all plugins inside ```plugins/multimods``` and loads back the selected ones for a given map.
+   * It also exec a configuration file for the map.
+      * Both as specified inside ```addons/sourcemod/configs/multimods.ini```
 
-
-## Installation 
-
-#### Method 1
-1) Place the compiled binary inside your plugins folder, as usual.
-2) Use this repo's examples for "de_dust2" and "cs_office" in order to configuring this plugin.
-
-#### Method 2
-1) Place the compiled binary inside your plugins folder, as usual.
-2) Create "configs\multimods\multimods.ini" inside your configs folder.
-3) Make the KeyValue root field "Multimod Plugins"
-    * Any child node inside it must follow 
-```
-  "Example plugin 1"
-  {
-      "File"  "pluginname.smx"
-  }
-```
-4) Make the KeyValue root field "Multimod Maps"
-    * Any child node inside it must follow
-```
-  "mapname"
-  {
-      "Configs"   "path\relative\to\cfg\customfolder\customfile.cfg"
-      "Plugins"   "path\relative\to\addons\sourcemod\config\customfolder\customfile.cfg"
-  }
-```
-
-5) Create the "Configs" config file and edit it as any .cfg file
-6) List the "Plugins" config file and Make a KeyValue root field with the a custom name.
-    * Any child node inside it must follow
-```
-  "Example plugin 1"
-  {
-      "File"  "pluginname.smx"
-  }
-```
-
-## Lifetime of the plugin
-On map start it'll unload all plugins listed in the first KeyValue root field inside "configs\multimods\multimods.ini" 
-It'll then search for the current map's name in the second KeyValue root field inside "configs\multimods\multimods.ini"
-Plugins and Configs key fields will be read and if it's path is valid, the plugin's listed inside it and configs will be loaded/executed.
-
-## Notes
-1) Any plugin that is not listed on "configs\multimods\multimods.ini" will work accross all mods.
-2) A mod plugins.cfg is relative to "addons\sourcemod\configs" folder.
-3) A mod configs.cfg is relative to "cfg" folder.
+## Installation
+   * Compile this plugin, it doesn't require any fancy stuff.
+   * Paste the compiled binary inside the plugins folder.
+   * Use this repo's files as guides, there's examples for ```cs_office``` and ```de_dust2```, or
+      * Create ```addons/sourcemod/plugins/multimods``` folder
+      * Create ```addons/sourcemod/configs/multimods.ini``` file
+      
+   * ```addons/sourcemod/configs/multimods.ini``` is read as a KeyValues and must have the root key ```"Multimods"```, the key value system must follow something     like:
+      ```
+      "Multimods
+      {
+         "mapname"
+         {
+            "Configs"   "path\to\custom\configs.cfg" // relative to cfg folder
+            "Plugins"   "path\to\custom\plugins.cfg" // relative to addons/sourcemod/configs folder
+         }
+      }
+      ```
+   * Create both ```Configs``` and ```Plugins``` custom paths. The ```Configs``` path works as any .cfg file you ```exec``` on console, but the ```Plugins``` also must follow a KeyValue system, like:
+      ```
+      "Custom mod Plugins"
+      {
+         "Custom Plugin Name"
+         {
+            "File"   "plugin_name.smx" // must be inside plugins/multimods
+         }
+      }
+      ```
+* Done, now any plugin installed under the standart sourcemod's folder will work accross all mods and all plugins under plugins/multimods will only work when a map get's loaded and has it's name inside it's list.
