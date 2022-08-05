@@ -1,7 +1,3 @@
-/*
-    This plugin pourpose is to help in testing the multimods plugin
-*/
-
 #pragma newdecls required;
 #pragma semicolon 1;
 
@@ -9,7 +5,7 @@
 
 public Plugin myinfo =
 {
-	name = "cs_ example",
+	name = "Demolition Example",
 	author = "franzpedd",
 	description = "helps in testing the multimod plugins",
 	version = "0.0.1",
@@ -18,10 +14,10 @@ public Plugin myinfo =
 
 public void OnPluginStart()
 {
-    RegConsoleCmd("cs", Cmd_cs);
+    RegConsoleCmd("de", Cmd_de);
 }
 
-public Action Cmd_cs(int client, int argc)
+public Action Cmd_de(int client, int argc)
 {
 	PrintToChat(client, "It's enabled");
 
