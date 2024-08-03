@@ -16,7 +16,7 @@ This plugin allows a server to handle different plugins and configs per map.
 ## Setting up a mod
    * ```addons/sourcemod/configs/multimods.ini``` is read as a KeyValues and must have the root key ```"Multimods"```, the key value system must follow something     like:
       ```
-      "Multimods
+      "Multimods"
       {
          "mapname"
          {
